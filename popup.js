@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const applyFilterButton = document.getElementById('applyFilterButton');
+    const sandpaperButton = document.getElementById('sandpaperButton');
 
-    applyFilterButton.addEventListener('click', function() {
+    sandpaperButton.addEventListener('click', function() {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, { action: 'applyFilter', keyword: 'foo' });
+            chrome.tabs.sendMessage(tabs[0].id, { action: 'sandpaper', keyword: 'smoothIt' });
         });
     });
 });

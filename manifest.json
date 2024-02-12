@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Keyword Filter",
+  "name": "Sandpaper",
   "version": "2.0",
-  "description": "A Chrome extension to filter keywords from a webpage",
+  "description": "A Chrome extension to smooth out the web",
   "permissions": [
     "activeTab",
     "scripting"

@@ -1,10 +1,12 @@
-# Content Filter (cfilter)
+# Sandpaper
 
-Find keywords and replace them. Could be used as a targeted ad blocker.
+Smoothing the rough edges of the web.
+
+Eliminate awkward or annoying behavior on websites.
 
 ## Deployment
 
-To side load the extension:
+This is a Chrome extension. To side load the extension:
 
 * open the Chrome browser and go to chrome://extensions/
 * enable "Developer mode"

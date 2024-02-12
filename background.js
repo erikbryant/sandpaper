@@ -1,3 +1,3 @@
 chrome.runtime.onMessage.addListener(function() {
-    console.log('Keyword Filter Extension Installed');
+    console.log('Sandpaper Extension Installed');
 });
