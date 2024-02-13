@@ -48,4 +48,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
   }
 
+  // Remove embedded videos
+  elements = document.getElementsByTagName("div");
+  for (let i = 0; i < elements.length; i++) {
+    let attr = elements[i].getAttribute("data-type");
+    if (attr === "video") {
+      console.log('Removing embedded video');
+      elements[i].remove();
+    }
+  }
+
 });
