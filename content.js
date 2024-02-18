@@ -16,7 +16,7 @@ function remove(elementType, attrName, attrValue, parents, note ) {
   const elements = document.getElementsByTagName(elementType);
   for (let i = 0; i < elements.length; i++) {
     let attr = elements[i].getAttribute(attrName);
-    if (attr !== null && attr.startsWith(attrValue)) {
+    if (attr !== null && attr.includes(attrValue)) {
       // Walk up through the parents
       let outer = elements[i];
       for (let p = 0; p < parents; p++) {
@@ -34,10 +34,13 @@ function nyTimes() {
   remove('div', 'data-testid', 'masthead-nested-nav', 0, 'Removing nav bar');
 
   // Remove slideshow animations
-  remove('div', 'class', 'slideshow-animate', 0, 'Removing slideshow');
+  remove('div', 'class', 'slideshow-animate', 2, 'Removing slideshow');
 
   // Remove auto-play videos
   remove('section', 'aria-label', 'Gallery', 0, 'Removing video');
+
+  // Remove opinion section
+  remove('a', 'href', '/opinion/', 3, 'Removing opinions');
 }
 
 // Wall Street Journal site smoothing
@@ -55,6 +58,12 @@ function wsj() {
   // Remove home page ads and opinions
   remove('div', 'class', 'WSJTheme--padding-bottom', 0, 'Removing top ad');
   remove('div', 'class', 'WSJTheme--adWrapper', 0, 'Removing ad wrapper');
+
+  // Remove most popular opinion
+  remove('aside', 'id', 'most-popular-opinion-articles', 1, 'Removing most popular opinion');
+
+  // Remove most popular videos that are opinions
+  remove('a', 'href', '/wsj-opinion', 1, 'Removing most popular video opinion');
 
   // Remove embedded videos
   remove('div', 'data-type', 'video', 0, 'Removing embedded video');
