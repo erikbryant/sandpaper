@@ -12,18 +12,53 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 });
 
 // Remove an attribute (or its parent) from the document
-function remove(elementType, attrName, attrValue, parents, note ) {
+function remove(elementType, attrName, attrValue, parents, note) {
   const elements = document.getElementsByTagName(elementType);
+
+  for (let i = 0; i < elements.length; i++) {
+    let attr = elements[i].getAttribute(attrName);
+    if (attr === null || !attr.includes(attrValue)) {
+      continue
+    }
+    // Walk up through the parents
+    let outer = elements[i];
+    for (let p = 0; p < parents; p++) {
+      outer = outer.parentElement
+    }
+    console.log(note);
+    outer.remove();
+  }
+}
+
+// Remove content about offensive topics
+function elide(offensive, parents) {
+  const elementType = 'p';
+  const note = 'Remove offensive topics: "' + offensive + '"';
+  const elements = document.getElementsByTagName(elementType);
+
+  for (let i = 0; i < elements.length; i++) {
+    const text = elements[i].innerText.toLowerCase();
+    if (!text.includes(offensive.toLowerCase())) {
+      continue
+    }
+    // Walk up through the parents
+    let outer = elements[i];
+    for (let p = 0; p < parents; p++) {
+      outer = outer.parentElement
+    }
+    console.log(note);
+    outer.remove();
+  }
+}
+
+// Find an element/attr and log it to the console
+function print(elementType, attrName, attrValue) {
+  const elements = document.getElementsByTagName(elementType);
+
   for (let i = 0; i < elements.length; i++) {
     let attr = elements[i].getAttribute(attrName);
     if (attr !== null && attr.includes(attrValue)) {
-      // Walk up through the parents
-      let outer = elements[i];
-      for (let p = 0; p < parents; p++) {
-        outer = outer.parentElement
-      }
-      console.log(note);
-      outer.remove();
+      console.log(elements[i].innerText);
     }
   }
 }
@@ -41,6 +76,10 @@ function nyTimes() {
 
   // Remove opinion section
   remove('a', 'href', '/opinion/', 3, 'Removing opinions');
+
+  // Remove articles about gruesome topics
+  elide('grisly', 5);
+  elide('racism', 5);
 }
 
 // Wall Street Journal site smoothing
