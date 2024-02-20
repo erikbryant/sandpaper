@@ -1,5 +1,5 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  switch(location.host) {
+  switch (location.host) {
     case 'www.wsj.com':
       wsj();
       break;
@@ -73,6 +73,8 @@ function nyTimes() {
 
   // Remove auto-play videos
   remove('section', 'aria-label', 'Gallery', 0, 'Removing video');
+  remove('div', 'class', 'react-vhs-container', 5, 'Removing autoplay video');
+  remove('video', 'data-play', 'true', 0, 'Removing video element');
 
   // Remove opinion section
   remove('a', 'href', '/opinion/', 3, 'Removing opinions');
@@ -100,6 +102,7 @@ function wsj() {
 
   // Remove most popular opinion
   remove('aside', 'id', 'most-popular-opinion-articles', 1, 'Removing most popular opinion');
+  remove('div', 'aria-label', 'Most Popular Opinion', 0, 'Removing most popular opinion');
 
   // Remove most popular videos that are opinions
   remove('a', 'href', '/wsj-opinion', 1, 'Removing most popular video opinion');
