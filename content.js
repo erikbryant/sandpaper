@@ -85,7 +85,10 @@ function nyTimes() {
   // Remove articles about gruesome topics
   elide('p', 'grisly', 5);
   elide('p', 'racism', 5);
-  elide('p', 'shooting horror', 5);
+  // More News
+  elide('p', 'child abuse', 1);
+  elide('p', 'traumatize', 1);
+  elide('p', 'homicide', 1);
 }
 
 // Wall Street Journal site smoothing
@@ -115,5 +118,6 @@ function wsj() {
   remove('div', 'data-type', 'video', 0, 'Removing embedded video');
 
   // Remove articles about gruesome topics
-  elide('a', 'brutal killing', 2);
+  elide('a', 'shooting horror', 5);
+  elide('a', 'homicide', 5);
 }
