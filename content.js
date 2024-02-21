@@ -31,13 +31,17 @@ function remove(elementType, attrName, attrValue, parents, note) {
 }
 
 // Remove content about offensive topics
-function elide(offensive, parents) {
-  const elementType = 'p';
+function elide(elementType, offensive, parents) {
   const note = 'Remove offensive topics: "' + offensive + '"';
   const elements = document.getElementsByTagName(elementType);
 
   for (let i = 0; i < elements.length; i++) {
-    const text = elements[i].innerText.toLowerCase();
+    let text = elements[i].innerText;
+    if (text === undefined || text === null) {
+      continue
+    }
+    console.log(text);
+    text = text.toLowerCase();
     if (!text.includes(offensive.toLowerCase())) {
       continue
     }
@@ -46,7 +50,6 @@ function elide(offensive, parents) {
     for (let p = 0; p < parents; p++) {
       outer = outer.parentElement
     }
-    console.log(note);
     outer.remove();
   }
 }
@@ -80,8 +83,9 @@ function nyTimes() {
   remove('a', 'href', '/opinion/', 3, 'Removing opinions');
 
   // Remove articles about gruesome topics
-  elide('grisly', 5);
-  elide('racism', 5);
+  elide('p', 'grisly', 5);
+  elide('p', 'racism', 5);
+  elide('p', 'shooting horror', 5);
 }
 
 // Wall Street Journal site smoothing
@@ -109,4 +113,7 @@ function wsj() {
 
   // Remove embedded videos
   remove('div', 'data-type', 'video', 0, 'Removing embedded video');
+
+  // Remove articles about gruesome topics
+  elide('a', 'brutal killing', 2);
 }
