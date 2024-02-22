@@ -89,6 +89,10 @@ function nyTimes() {
   elide('p', 'child abuse', 1);
   elide('p', 'traumatize', 1);
   elide('p', 'homicide', 1);
+  elide('p', 'sexual assault', 2);
+  elide('p', 'anti-trans policies', 2);
+  elide('p', 'murder suspect', 2);
+  elide('p', 'death toll', 2);
 }
 
 // Wall Street Journal site smoothing
@@ -116,6 +120,14 @@ function wsj() {
 
   // Remove embedded videos
   remove('div', 'data-type', 'video', 0, 'Removing embedded video');
+
+  // Remove popups
+  elide('a', 'subscriber benefits', 0);
+  elide('a', 'the journal podcast', 0);
+  elide('a', 'my market watchlist', 0);
+  elide('a', 'subscriber updates', 0);
+  elide('a', 'play wsj puzzles', 0);
+  remove('img', 'alt', 'Explore the App', 0, 'Removing explore app popup');
 
   // Remove articles about gruesome topics
   elide('a', 'shooting horror', 5);
