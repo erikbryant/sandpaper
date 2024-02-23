@@ -40,7 +40,6 @@ function elide(elementType, offensive, parents) {
     if (text === undefined || text === null) {
       continue
     }
-    console.log(text);
     text = text.toLowerCase();
     if (!text.includes(offensive.toLowerCase())) {
       continue
@@ -50,6 +49,7 @@ function elide(elementType, offensive, parents) {
     for (let p = 0; p < parents; p++) {
       outer = outer.parentElement
     }
+    console.log(note);
     outer.remove();
   }
 }
@@ -93,6 +93,9 @@ function nyTimes() {
   elide('p', 'anti-trans policies', 2);
   elide('p', 'murder suspect', 2);
   elide('p', 'death toll', 2);
+  elide('p', 'shot dead', 2);
+  elide('p', 'children die', 2);
+  elide('p', 'body found', 2);
 }
 
 // Wall Street Journal site smoothing
@@ -132,4 +135,7 @@ function wsj() {
   // Remove articles about gruesome topics
   elide('a', 'shooting horror', 5);
   elide('a', 'homicide', 5);
+  // What to read next
+  elide('p', 'child exploitation', 5);
+  elide('p', 'sex-abuse', 5);
 }
