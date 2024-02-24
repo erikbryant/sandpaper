@@ -79,12 +79,18 @@ function nyTimes() {
   remove('div', 'class', 'react-vhs-container', 5, 'Removing autoplay video');
   remove('video', 'data-play', 'true', 0, 'Removing video element');
 
-  // Remove opinion section
+  // Remove opinion sections
   remove('a', 'href', '/opinion/', 3, 'Removing opinions');
+  remove('a', 'href', '/opinion/columnist', 3, 'Removing opinion section');
+  elide('h2', 'opinion', 0);
 
   // Remove articles about gruesome topics
-  elide('p', 'grisly', 5);
-  elide('p', 'racism', 5);
+  elide('p', ' grisly ', 2);
+  elide('p', ' racism ', 2);
+  elide('p', ' rape ', 2);
+  elide('p', ' killing ', 2);
+  elide('p', ' killed ', 2);
+  elide('p', 'stalked by men', 3);
   // More News
   elide('p', 'child abuse', 1);
   elide('p', 'traumatize', 1);
