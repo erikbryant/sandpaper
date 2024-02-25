@@ -30,9 +30,9 @@ function remove(elementType, attrName, attrValue, parents, note) {
   }
 }
 
-// Remove content about offensive topics
-function elide(elementType, offensive, parents) {
-  const note = 'Remove offensive topics: "' + offensive + '"';
+// Remove content about a given topic
+function elide(elementType, topic, parents) {
+  const note = 'Remove topic: "' + topic + '"';
   const elements = document.getElementsByTagName(elementType);
 
   for (let i = 0; i < elements.length; i++) {
@@ -41,7 +41,7 @@ function elide(elementType, offensive, parents) {
       continue
     }
     text = text.toLowerCase();
-    if (!text.includes(offensive.toLowerCase())) {
+    if (!text.includes(topic.toLowerCase())) {
       continue
     }
     // Walk up through the parents
@@ -129,6 +129,9 @@ function wsj() {
 
   // Remove embedded videos
   remove('div', 'data-type', 'video', 0, 'Removing embedded video');
+
+  // Remove pop-up page header/menu
+  remove('header', 'class', 'MainHeader-CollapsedHeader', 0, 'Removing pop-up header');
 
   // Remove popups
   elide('a', 'subscriber benefits', 0);
