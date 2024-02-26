@@ -144,6 +144,10 @@ function wsj() {
   // Remove articles about gruesome topics
   elide('a', 'shooting horror', 5);
   elide('a', 'homicide', 5);
+  elide('a', 'killing amish children', 3);
+  elide('a', 'grief, murder and extortion', 3);
+  elide('a', 'murder, sexual violence', 1);
+  elide('a', 'hostages hamas', 1);
   // What to read next
   elide('p', 'child exploitation', 5);
   elide('p', 'sex-abuse', 5);
