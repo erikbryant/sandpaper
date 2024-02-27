@@ -6,6 +6,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     case 'www.nytimes.com':
       nyTimes();
       break;
+    case 'www.iflscience.com':
+      iflscience();
+      break;
     default:
       console.log('No sandpaper handler for:', location.host)
   }
@@ -133,6 +136,9 @@ function wsj() {
   // Remove pop-up page header/menu
   remove('header', 'class', 'MainHeader-CollapsedHeader', 0, 'Removing pop-up header');
 
+  // Remove live market data tags
+  remove('a', 'class', 'ChicletStyle', 0, 'Removing market data tag');
+
   // Remove popups
   elide('a', 'subscriber benefits', 0);
   elide('a', 'the journal podcast', 0);
@@ -151,4 +157,13 @@ function wsj() {
   // What to read next
   elide('p', 'child exploitation', 5);
   elide('p', 'sex-abuse', 5);
+}
+
+function iflscience() {
+  // Remove pop-up title bar
+  remove('div', 'class', 'header-primary', 0, 'Removing pop-up header: primary');
+  remove('div', 'class', 'header-secondary', 0, 'Removing pop-up header: secondary');
+  remove('aside', 'class', 'sidebar', 0, 'Removing sidebar');
+  remove('div', 'id', 'taboola', 0, 'Removing trailing ads');
+  remove('div', 'id', 'spotim-specific', 0, 'Removing community, comments');
 }
