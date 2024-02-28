@@ -28,14 +28,14 @@ function remove(elementType, attrName, attrValue, parents, note) {
     for (let p = 0; p < parents; p++) {
       outer = outer.parentElement
     }
-    console.log(note);
+    console.log('Remove: ' + note);
     outer.remove();
   }
 }
 
 // Remove content about a given topic
 function elide(elementType, topic, parents) {
-  const note = 'Remove topic: "' + topic + '"';
+  const note = 'Elide: "' + topic + '"';
   const elements = document.getElementsByTagName(elementType);
 
   for (let i = 0; i < elements.length; i++) {
@@ -72,19 +72,19 @@ function print(elementType, attrName, attrValue) {
 // New York Times site smoothing
 function nyTimes() {
   // Remove nav bar
-  remove('div', 'data-testid', 'masthead-nested-nav', 0, 'Removing nav bar');
+  remove('div', 'data-testid', 'masthead-nested-nav', 0, 'nav bar');
 
   // Remove slideshow animations
-  remove('div', 'class', 'slideshow-animate', 2, 'Removing slideshow');
+  remove('div', 'class', 'slideshow-animate', 2, 'slideshow');
 
   // Remove auto-play videos
-  remove('section', 'aria-label', 'Gallery', 0, 'Removing video');
-  remove('div', 'class', 'react-vhs-container', 5, 'Removing autoplay video');
-  remove('video', 'data-play', 'true', 0, 'Removing video element');
+  remove('section', 'aria-label', 'Gallery', 0, 'video');
+  remove('div', 'class', 'react-vhs-container', 5, 'autoplay video');
+  remove('video', 'data-play', 'true', 0, 'video element');
 
   // Remove opinion sections
-  remove('a', 'href', '/opinion/', 3, 'Removing opinions');
-  remove('a', 'href', '/opinion/columnist', 3, 'Removing opinion section');
+  remove('a', 'href', '/opinion/', 3, 'opinions');
+  remove('a', 'href', '/opinion/columnist', 3, 'opinion section');
   elide('h2', 'opinion', 0);
 
   // Remove articles about gruesome topics
@@ -110,42 +110,50 @@ function nyTimes() {
 // Wall Street Journal site smoothing
 function wsj() {
   // Remove cloudfront-hosted ads
-  remove('a', 'href', '.cloudfront.net', 0, 'Removing cloudfront-hosted ad');
+  remove('a', 'href', '.cloudfront.net', 0, 'cloudfront-hosted ad');
 
   // Remove tiktok videos
-  remove('div', 'data-inset_type', 'tiktok', 0, 'Removing TikTok video');
+  remove('div', 'data-inset_type', 'tiktok', 0, 'TikTok video');
 
   // Remove nav bar
-  remove('nav', 'aria-label', 'Primary', 0, 'Removing nav bar');
-  remove('nav', 'aria-label', 'Primary', 0, 'Removing nav bar');  // I don't know why we need to do this twice
+  remove('nav', 'aria-label', 'Primary', 0, 'nav bar');
+  remove('nav', 'aria-label', 'Primary', 0, 'nav bar');  // I don't know why we need to do this twice
 
   // Remove home page ads and opinions
-  remove('div', 'class', 'WSJTheme--padding-bottom', 0, 'Removing top ad');
-  remove('div', 'class', 'WSJTheme--adWrapper', 0, 'Removing ad wrapper');
+  remove('div', 'class', 'WSJTheme--padding-bottom', 0, 'top ad');
+  remove('div', 'class', 'WSJTheme--adWrapper', 0, 'ad wrapper');
 
   // Remove most popular opinion
-  remove('aside', 'id', 'most-popular-opinion-articles', 1, 'Removing most popular opinion');
-  remove('div', 'aria-label', 'Most Popular Opinion', 0, 'Removing most popular opinion');
+  remove('aside', 'id', 'most-popular-opinion-articles', 1, 'most popular opinion');
+  remove('div', 'aria-label', 'Most Popular Opinion', 0, 'most popular opinion');
 
   // Remove most popular videos that are opinions
-  remove('a', 'href', '/wsj-opinion', 1, 'Removing most popular video opinion');
+  remove('a', 'href', '/wsj-opinion', 1, 'most popular video opinion');
 
   // Remove embedded videos
-  remove('div', 'data-type', 'video', 0, 'Removing embedded video');
+  remove('div', 'data-type', 'video', 0, 'embedded video');
 
   // Remove pop-up page header/menu
-  remove('header', 'class', 'MainHeader-CollapsedHeader', 0, 'Removing pop-up header');
+  remove('header', 'class', 'MainHeader-CollapsedHeader', 0, 'pop-up header');
 
   // Remove live market data tags
-  remove('a', 'class', 'ChicletStyle', 0, 'Removing market data tag');
+  remove('a', 'class', 'ChicletStyle', 0, 'market data tag');
+
+  // Remove newsletter inset
+  elide('p', 'newsletter sign-up', 4);
+
+  // Remove sidebar ads
+  remove('div', 'class', 'sponsor-title', 2, 'sidebar ads');
 
   // Remove popups
   elide('a', 'subscriber benefits', 0);
   elide('a', 'the journal podcast', 0);
   elide('a', 'my market watchlist', 0);
   elide('a', 'subscriber updates', 0);
+  elide('a', 'wsj newsletters', 0);
   elide('a', 'play wsj puzzles', 0);
-  remove('img', 'alt', 'Explore the App', 0, 'Removing explore app popup');
+  elide('a', 'be ready for tax time', 0);
+  remove('img', 'alt', 'Explore the App', 0, 'explore app popup');
 
   // Remove articles about gruesome topics
   elide('a', 'shooting horror', 5);
@@ -161,9 +169,9 @@ function wsj() {
 
 function iflscience() {
   // Remove pop-up title bar
-  remove('div', 'class', 'header-primary', 0, 'Removing pop-up header: primary');
-  remove('div', 'class', 'header-secondary', 0, 'Removing pop-up header: secondary');
-  remove('aside', 'class', 'sidebar', 0, 'Removing sidebar');
-  remove('div', 'id', 'taboola', 0, 'Removing trailing ads');
-  remove('div', 'id', 'spotim-specific', 0, 'Removing community, comments');
+  remove('div', 'class', 'header-primary', 0, 'pop-up header: primary');
+  remove('div', 'class', 'header-secondary', 0, 'pop-up header: secondary');
+  remove('aside', 'class', 'sidebar', 0, 'sidebar');
+  remove('div', 'id', 'taboola', 0, 'trailing ads');
+  remove('div', 'id', 'spotim-specific', 0, 'community, comments');
 }
