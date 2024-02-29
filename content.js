@@ -94,7 +94,9 @@ function nyTimes() {
   elide('p', ' killing ', 2);
   elide('p', ' killed ', 2);
   elide('p', 'stalked by men', 3);
-  // More News
+  // ...Highlight articles
+  elide('p', 'suspect in the killing', 7);
+  // ...More News
   elide('p', 'child abuse', 1);
   elide('p', 'traumatize', 1);
   elide('p', 'homicide', 1);
