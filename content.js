@@ -107,6 +107,9 @@ function nyTimes() {
   elide('p', 'shot dead', 2);
   elide('p', 'children die', 2);
   elide('p', 'body found', 2);
+  elide('p', 'kills dozens', 2);
+  // ...News snippets
+  elide('p', 'deaths of gazans', 2);
 }
 
 // Wall Street Journal site smoothing
