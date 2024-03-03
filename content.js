@@ -1,4 +1,5 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  console.log('Host: ' + location.host);
   switch (location.host) {
     case 'www.wsj.com':
       wsj();
@@ -79,7 +80,7 @@ function nyTimes() {
 
   // Remove auto-play videos
   remove('section', 'aria-label', 'Gallery', 0, 'video');
-  remove('div', 'class', 'react-vhs-container', 5, 'autoplay video');
+  remove('div', 'class', 'react-vhs-container', 4, 'autoplay video');
   remove('video', 'data-play', 'true', 0, 'video element');
 
   // Remove opinion sections
