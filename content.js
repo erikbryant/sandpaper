@@ -36,7 +36,7 @@ function remove(elementType, attrName, attrValue, parents, note) {
 
 // Remove content about a given topic
 function elide(elementType, topic, parents) {
-  const note = 'Elide: "' + topic + '"';
+  const note = 'Elide: \'' + topic + '\'';
   const elements = document.getElementsByTagName(elementType);
 
   for (let i = 0; i < elements.length; i++) {
@@ -111,6 +111,9 @@ function nyTimes() {
   elide('p', 'kills dozens', 2);
   // ...News snippets
   elide('p', 'deaths of gazans', 2);
+  elide('p', 'scare us again', 2);
+  elide('p', 'covid deaths in nursing homes', 2);
+  elide('p', 'sex assaults and other crimes', 2);
 }
 
 // Wall Street Journal site smoothing
@@ -151,6 +154,9 @@ function wsj() {
   // Remove sidebar ads
   remove('div', 'class', 'sponsor-title', 2, 'sidebar ads');
 
+  // Remove slideshows
+  remove('img', 'srcset', 'http', 0, 'slideshow image');
+
   // Remove popups
   elide('a', 'subscriber benefits', 0);
   elide('a', 'the journal podcast', 0);
@@ -168,6 +174,7 @@ function wsj() {
   elide('a', 'grief, murder and extortion', 3);
   elide('a', 'murder, sexual violence', 1);
   elide('a', 'hostages hamas', 1);
+  elide('span', 'violent crime is rising', 2);
   // What to read next
   elide('p', 'child exploitation', 5);
   elide('p', 'sex-abuse', 5);
