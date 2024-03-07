@@ -75,6 +75,9 @@ function nyTimes() {
   // Remove nav bar
   remove('div', 'data-testid', 'masthead-nested-nav', 0, 'nav bar');
 
+  // Remove sponsor wrapper
+  remove('div', 'id', 'sponsor-wrapper', 0, 'sponsor wrapper');
+
   // Remove slideshow animations
   remove('div', 'class', 'slideshow-animate', 2, 'slideshow');
 
@@ -82,6 +85,8 @@ function nyTimes() {
   remove('section', 'aria-label', 'Gallery', 0, 'video');
   remove('div', 'class', 'react-vhs-container', 4, 'autoplay video');
   remove('video', 'data-play', 'true', 0, 'video element');
+  remove('figure', 'data-testid', 'VideoBlock', 0, 'video block');
+  remove('blockquote', 'class', 'tiktok-embed', 1, 'tiktok video');
 
   // Remove opinion sections
   remove('a', 'href', '/opinion/', 3, 'opinions');
@@ -109,6 +114,8 @@ function nyTimes() {
   elide('p', 'children die', 2);
   elide('p', 'body found', 2);
   elide('p', 'kills dozens', 2);
+  elide('p', 'teens are shot', 2);
+  elide('p', 'life in nazi camps', 2);
   // ...News snippets
   elide('p', 'deaths of gazans', 2);
   elide('p', 'scare us again', 2);
