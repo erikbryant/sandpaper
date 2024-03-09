@@ -100,6 +100,9 @@ function nyTimes() {
   elide('p', ' killing ', 2);
   elide('p', ' killed ', 2);
   elide('p', 'stalked by men', 3);
+  elide('p', 'harrowing image of a skeletal', 2);
+  // ...In Case You Missed It
+  elide('p', 'women were found dead', 5);
   // ...Highlight articles
   elide('p', 'suspect in the killing', 7);
   // ...More News
@@ -121,6 +124,9 @@ function nyTimes() {
   elide('p', 'scare us again', 2);
   elide('p', 'covid deaths in nursing homes', 2);
   elide('p', 'sex assaults and other crimes', 2);
+  elide('p', 'police shoot and kill', 2);
+  elide('p', 'sex assaults and other crimes', 2);
+  elide('p', 'dartmouth players detail', 2);
 }
 
 // Wall Street Journal site smoothing
