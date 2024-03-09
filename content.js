@@ -182,6 +182,8 @@ function wsj() {
   elide('a', 'murder, sexual violence', 1);
   elide('a', 'hostages hamas', 1);
   elide('span', 'violent crime is rising', 2);
+  elide('span', 'died in a horrible', 0);
+  elide('span', 'afraid inflation will eat', 0);
   // What to read next
   elide('p', 'child exploitation', 5);
   elide('p', 'sex-abuse', 5);
