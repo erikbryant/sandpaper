@@ -129,6 +129,13 @@ function nyTimes() {
   elide('p', 'police shoot and kill', 2);
   elide('p', 'sex assaults and other crimes', 2);
   elide('p', 'dartmouth players detail', 2);
+  // ...Trending in the Times
+  elide('a', 'twins found dead', 2);
+  elide('a', 'colorado man died from venomous', 2);
+  // ...More in New York
+  elide('a', 'killing of a black', 2);
+  elide('a', 'shooting on a subway', 2);
+  elide('a', 'killing of unarmed man', 2);
 }
 
 // Wall Street Journal site smoothing
