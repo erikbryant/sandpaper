@@ -119,6 +119,8 @@ function nyTimes() {
   elide('p', 'kills dozens', 2);
   elide('p', 'teens are shot', 2);
   elide('p', 'life in nazi camps', 2);
+  elide('p', 'people fatally shot', 2);
+  elide('p', 'raping a teenager', 2);
   // ...News snippets
   elide('p', 'deaths of gazans', 2);
   elide('p', 'scare us again', 2);
