@@ -101,6 +101,8 @@ function nyTimes() {
   elide('p', ' killed ', 2);
   elide('p', 'stalked by men', 3);
   elide('p', 'harrowing image of a skeletal', 2);
+  elide('p', 'death toll rises', 4);
+  remove('nav', 'aria-labelledby', 'styln-israel-gaza-hp-menu', 8);
   // ...In Case You Missed It
   elide('p', 'women were found dead', 5);
   // ...Highlight articles
@@ -162,7 +164,8 @@ function wsj() {
   remove('a', 'href', '/wsj-opinion', 1, 'most popular video opinion');
 
   // Remove embedded videos
-  remove('div', 'data-type', 'video', 0, 'embedded video');
+  remove('div', 'data-type', 'video', 0, 'embedded video 1');
+  remove('div', 'class', 'video-player', 0, 'embedded video 2');
 
   // Remove pop-up page header/menu
   remove('header', 'class', 'MainHeader-CollapsedHeader', 0, 'pop-up header');
@@ -190,15 +193,21 @@ function wsj() {
   remove('img', 'alt', 'Explore the App', 0, 'explore app popup');
 
   // Remove articles about gruesome topics
+  elide('a', 'people detained over killings', 4);
   elide('a', 'shooting horror', 5);
   elide('a', 'homicide', 5);
   elide('a', 'killing amish children', 3);
   elide('a', 'grief, murder and extortion', 3);
   elide('a', 'murder, sexual violence', 1);
   elide('a', 'hostages hamas', 1);
+  elide('a', 'ceo ends his life', 3);
   elide('span', 'violent crime is rising', 2);
   elide('span', 'died in a horrible', 0);
   elide('span', 'afraid inflation will eat', 0);
+  // ...Most Popular News
+  elide('a', 'attack that killed', 1);
+  // ...Recommended Videos
+  elide('a', 'russia detains terror', 1);
   // What to read next
   elide('p', 'child exploitation', 5);
   elide('p', 'sex-abuse', 5);
