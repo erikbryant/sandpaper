@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Sandpaper",
-  "version": "1.0.1",
-  "description": "Make the web a happier place",
+  "version": "1.0.3",
+  "description": "Make the web a happier place 🙂",
   "permissions": [],
   "host_permissions": [
     "https://www.wsj.com/*"

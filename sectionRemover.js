@@ -5,8 +5,13 @@
         "#opinion-module",
         '[aria-label="WSJ Opinion | Free Expression"]',
         '[data-skip-label="WSJ Opinion | Free Expression"]',
+        '[data-testid="podcasts-container"]',
         '[data-layout-type="buyside-right-rail"]',
-        '[data-layout-type="most-popular-opinion"]'
+        '[aria-label="Most Popular Opinion"]',
+        '[data-layout-type="buyside-main"]',
+        '[data-layout-type="realtor"]',
+        '[id="wtrn-block-7"]', // MarketWatch
+        '[title="‘Michael’ Fans Absolutely Don’t Care About the Film’s Bad Reviews"]'
     ];
 
     function removeSection(el, label = "section") {
@@ -18,10 +23,7 @@
 
         el.innerHTML = `
             <div class="wsj-section-removed wsj-filter-card">
-                <div class="wsj-filter-title-text">
-                    🧹 Filtered section
-                    <button class="wsj-section-restore">Show</button>
-                </div>
+                <button class="wsj-section-restore">🙂 Show Section</button>
             </div>
         `;
 
@@ -40,20 +42,20 @@
             });
         });
 
-        // 2. fallback safety: catch re-rendered copies
-        document.querySelectorAll("section, div").forEach(el => {
-            if (el.dataset.removed) return;
-
-            const label = el.getAttribute("aria-label") || "";
-            const skip = el.getAttribute("data-skip-label") || "";
-
-            if (
-                label.includes("Free Expression") ||
-                skip.includes("Free Expression")
-            ) {
-                removeSection(el, "Free Expression");
-            }
-        });
+        // // 2. fallback safety: catch re-rendered copies
+        // document.querySelectorAll("section, div").forEach(el => {
+        //     if (el.dataset.removed) return;
+        //
+        //     const label = el.getAttribute("aria-label") || "";
+        //     const skip = el.getAttribute("data-skip-label") || "";
+        //
+        //     if (
+        //         label.includes("Free Expression") ||
+        //         skip.includes("Free Expression")
+        //     ) {
+        //         removeSection(el, "Free Expression");
+        //     }
+        // });
     }
 
     run();
