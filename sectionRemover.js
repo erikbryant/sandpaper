@@ -3,6 +3,7 @@
 
     const TARGET_SELECTORS = [
         "#opinion-module",
+        '[class="fader"]',
         '[aria-label="WSJ Opinion | Free Expression"]',
         '[data-skip-label="WSJ Opinion | Free Expression"]',
         '[data-testid="podcasts-container"]',
