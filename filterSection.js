@@ -16,23 +16,23 @@
         '[title="‘Michael’ Fans Absolutely Don’t Care About the Film’s Bad Reviews"]',
     ];
 
-    function removeSection(el) {
-        if (!el || el.dataset.removed) return;
+    function replaceWithPlaceholder(container, matchedWords) {
+        if (!container || container.dataset.filtered) return;
 
-        const original = el.innerHTML;
+        const original = container.innerHTML;
 
-        el.dataset.removed = "true";
+        container.dataset.filtered = "true";
 
-        el.innerHTML = `
-            <div class="wsj-section-removed wsj-filter-card">
+        container.innerHTML = `
+            <div class="wsj-filter-card" title="${escapeHtml(matchedWords)}">
                 <button class="wsj-section-restore">🙂 Show Section</button>
             </div>
         `;
 
-        el.querySelector(".wsj-section-restore")
+        container.querySelector(".wsj-section-restore")
             .addEventListener("click", () => {
-                el.innerHTML = original;
-                el.dataset.removed = "restored";
+                container.innerHTML = original;
+                container.dataset.filtered = "revealed";
             });
     }
 
@@ -40,7 +40,7 @@
         // 1. direct selectors (most reliable)
         TARGET_SELECTORS.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => {
-                removeSection(el, sel);
+                replaceWithPlaceholder(el, sel);
             });
         });
     }

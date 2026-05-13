@@ -4,6 +4,7 @@ const NEGATIVE_KEYWORDS = [
     "struck and killed by plane",
     "Massachusetts Man in a Hoodie",
     "Extorted by Sexual Partner",
+    "Murder of Wife and Son",
 ];
 
 // Match full words only using regex word boundaries
@@ -42,8 +43,7 @@ function replaceWithPlaceholder(container, matchedWords) {
     const matchedKeyword = matchedWords[0] || "keyword";
 
     container.innerHTML = `
-    <div class="wsj-filter-card"
-         title="${escapeHtml(matchedKeyword + ": " + originalText)}">
+    <div class="wsj-filter-card" title="${escapeHtml(matchedKeyword + ": " + originalText)}">
         <div class="wsj-filter-header">
             <button class="wsj-filter-button">🙂 Show Article</button>
         </div>
