@@ -58,15 +58,6 @@ function replaceWithPlaceholder(container, matchedWords) {
     });
 }
 
-// Basic HTML escaping for tooltip safety
-function escapeHtml(text) {
-    return text
-        .replace(/&/g, "&amp;")
-        .replace(/"/g, "&quot;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-}
-
 function filterArticles() {
     const candidates = document.querySelectorAll("h1, h2, h3, p");
 

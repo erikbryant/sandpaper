@@ -22,7 +22,7 @@
   "content_scripts": [
     {
       "matches": ["https://www.wsj.com/*"],
-      "js": ["filterContent.js", "filterSection.js", "filterVideo.js"],
+      "js": ["util.js", "filterContent.js", "filterSection.js", "filterVideo.js"],
       "css": ["styles.css"],
       "run_at": "document_idle"
     }
