@@ -1,5 +1,9 @@
 const NEGATIVE_KEYWORDS = [
-    "Put keywords or phrases here"
+    "after an ice raid",
+    "sexual-assault",
+    "struck and killed by plane",
+    "Massachusetts Man in a Hoodie",
+    "Extorted by Sexual Partner",
 ];
 
 // Match full words only using regex word boundaries

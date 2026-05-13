@@ -8,14 +8,15 @@
         '[data-skip-label="WSJ Opinion | Free Expression"]',
         '[data-testid="podcasts-container"]',
         '[data-layout-type="buyside-right-rail"]',
+        // '[data-layout-type="most-popular-opinion"]',
         '[aria-label="Most Popular Opinion"]',
+        '[aria-label="Recommended Videos"]',
         '[data-layout-type="buyside-main"]',
         '[data-layout-type="realtor"]',
-        '[id="wtrn-block-7"]', // MarketWatch
-        '[title="‘Michael’ Fans Absolutely Don’t Care About the Film’s Bad Reviews"]'
+        '[title="‘Michael’ Fans Absolutely Don’t Care About the Film’s Bad Reviews"]',
     ];
 
-    function removeSection(el, label = "section") {
+    function removeSection(el) {
         if (!el || el.dataset.removed) return;
 
         const original = el.innerHTML;
@@ -42,21 +43,6 @@
                 removeSection(el, sel);
             });
         });
-
-        // // 2. fallback safety: catch re-rendered copies
-        // document.querySelectorAll("section, div").forEach(el => {
-        //     if (el.dataset.removed) return;
-        //
-        //     const label = el.getAttribute("aria-label") || "";
-        //     const skip = el.getAttribute("data-skip-label") || "";
-        //
-        //     if (
-        //         label.includes("Free Expression") ||
-        //         skip.includes("Free Expression")
-        //     ) {
-        //         removeSection(el, "Free Expression");
-        //     }
-        // });
     }
 
     run();
