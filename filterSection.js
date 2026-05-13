@@ -36,7 +36,7 @@
             });
     }
 
-    function run() {
+    function filterSections() {
         // 1. direct selectors (most reliable)
         FILTER_KEYWORDS.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => {
@@ -45,9 +45,11 @@
         });
     }
 
-    run();
+    // Initial run
+    filterSections();
 
-    const observer = new MutationObserver(run);
+    // Observe dynamic content changes (WSJ loads content lazily)
+    const observer = new MutationObserver(filterSections);
 
     observer.observe(document.body, {
         childList: true,
