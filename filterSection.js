@@ -1,7 +1,7 @@
 (() => {
     if (!location.hostname.includes("wsj.com")) return;
 
-    const TARGET_SELECTORS = [
+    const FILTER_KEYWORDS = [
         "#opinion-module",
         '[class="fader"]',
         '[aria-label="WSJ Opinion | Free Expression"]',
@@ -38,7 +38,7 @@
 
     function run() {
         // 1. direct selectors (most reliable)
-        TARGET_SELECTORS.forEach(sel => {
+        FILTER_KEYWORDS.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => {
                 replaceWithPlaceholder(el, sel);
             });

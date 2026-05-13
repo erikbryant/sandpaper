@@ -1,4 +1,4 @@
-const NEGATIVE_KEYWORDS = [
+const FILTER_KEYWORDS = [
     "after an ice raid",
     "sexual-assault",
     "struck and killed by plane",
@@ -11,7 +11,7 @@ const NEGATIVE_KEYWORDS = [
 function getMatchedKeywords(text) {
     const lower = text.toLowerCase();
 
-    return NEGATIVE_KEYWORDS.filter(word => {
+    return FILTER_KEYWORDS.filter(word => {
         const regex = new RegExp(`\\b${word}\\b`, "i");
         return regex.test(lower);
     });
