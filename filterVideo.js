@@ -1,4 +1,6 @@
 (() => {
+    if (!location.hostname.includes("wsj.com")) return;
+
     // ================================
     // 1. BLOCK AUTOPLAY AT THE SOURCE
     // ================================
@@ -37,15 +39,11 @@
         document.querySelectorAll("video").forEach(stopVideo);
     }
 
-    // Run immediately
+    // Initial run
     scanVideos();
 
-    // ================================
-    // 3. HANDLE DYNAMIC WSJ PLAYER LOADS
-    // ================================
-    const observer = new MutationObserver(() => {
-        scanVideos();
-    });
+    // Observe dynamic content changes (WSJ loads content lazily)
+    const observer = new MutationObserver(scanVideos);
 
     observer.observe(document.documentElement, {
         childList: true,
