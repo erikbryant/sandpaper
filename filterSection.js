@@ -37,7 +37,6 @@
     }
 
     function filterSections() {
-        // 1. direct selectors (most reliable)
         FILTER_KEYWORDS.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => {
                 replaceWithPlaceholder(el, sel);
