@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Sandpaper",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Make the news a safer place 🙂",
   "permissions": [],
   "host_permissions": [
@@ -22,7 +22,7 @@
   "content_scripts": [
     {
       "matches": ["https://www.wsj.com/*"],
-      "js": ["util.js", "filterHeadlines.js", "filterSection.js", "filterWords.js", "filterVideo.js"],
+      "js": ["util.js", "filterHeadlines.js", "filterSection.js", "filterWords.js", "filterVideo.js", "documentBg.js"],
       "css": ["styles.css"],
       "run_at": "document_idle"
     }
