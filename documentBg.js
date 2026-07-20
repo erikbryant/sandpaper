@@ -1,3 +1,6 @@
+// WSJ does not have a dark mode. It has a glaring white background
+// Make that background less harsh.
+
 (() => {
     if (!location.hostname.includes("wsj.com")) return;
 
