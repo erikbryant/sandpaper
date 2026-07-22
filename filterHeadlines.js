@@ -8,6 +8,8 @@
         "Massachusetts Man in a Hoodie",
         "Extorted by Sexual Partner",
         "Murder of Wife and Son",
+        "Dead Bodies",
+        "Therapists to Blame",
     ];
 
 // Match full words only using regex word boundaries
