@@ -10,6 +10,9 @@
         "Murder of Wife and Son",
         "Dead Bodies",
         "Therapists to Blame",
+        "Hate Crime",
+        "School Shoot",
+        "Sexual Violence",
     ];
 
 // Match full words only using regex word boundaries
