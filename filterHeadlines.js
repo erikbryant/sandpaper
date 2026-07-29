@@ -12,7 +12,9 @@
         "Therapists to Blame",
         "Hate Crime",
         "School Shoot",
+        "Sexual Assault",
         "Sexual Violence",
+        "The Idaho Murders",
     ];
 
 // Match full words only using regex word boundaries
