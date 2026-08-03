@@ -15,6 +15,9 @@
         "Sexual Assault",
         "Sexual Violence",
         "The Idaho Murders",
+        "Helicopter parents",
+        "Wine That Pairs",
+        "Domestic Abuse",
     ];
 
 // Match full words only using regex word boundaries
