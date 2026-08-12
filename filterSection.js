@@ -8,37 +8,43 @@
         '[data-skip-label="WSJ Opinion | Free Expression"]',
         '[data-testid="podcasts-container"]',
         '[data-layout-type="buyside-right-rail"]',
-        // '[data-layout-type="most-popular-opinion"]',
+        '[data-layout-type="most-popular-opinion"]',
         '[aria-label="Most Popular Opinion"]',
         '[aria-label="Recommended Videos"]',
         '[data-layout-type="buyside-main"]',
         '[data-layout-type="realtor"]',
     ];
 
-    function replaceWithPlaceholder(container, matchedWords) {
-        if (!container || container.dataset.filtered) return;
+    // function replaceWithPlaceholder(container, matchedWords) {
+    //     if (!container || container.dataset.filtered) return;
+    //
+    //     const original = container.innerHTML;
+    //
+    //     container.dataset.filtered = "true";
+    //
+    //     container.innerHTML = `
+    //         <div class="wsj-filter-card" title="${escapeHtml(matchedWords)}">
+    //             <button class="wsj-section-restore">🙂 Show Section</button>
+    //         </div>
+    //     `;
+    //
+    //     container.querySelector(".wsj-section-restore")
+    //         .addEventListener("click", () => {
+    //             container.innerHTML = original;
+    //             container.dataset.filtered = "revealed";
+    //         });
+    // }
 
-        const original = container.innerHTML;
-
-        container.dataset.filtered = "true";
-
-        container.innerHTML = `
-            <div class="wsj-filter-card" title="${escapeHtml(matchedWords)}">
-                <button class="wsj-section-restore">🙂 Show Section</button>
-            </div>
-        `;
-
-        container.querySelector(".wsj-section-restore")
-            .addEventListener("click", () => {
-                container.innerHTML = original;
-                container.dataset.filtered = "revealed";
-            });
+    function removeSection(container) {
+        if (!container) return;
+        container.remove()
     }
 
     function filterSections() {
         FILTER_KEYWORDS.forEach(sel => {
             document.querySelectorAll(sel).forEach(el => {
-                replaceWithPlaceholder(el, sel);
+                // replaceWithPlaceholder(el, sel);
+                removeSection(el);
             });
         });
     }
