@@ -12,6 +12,7 @@
             "bucket-label-marketwatch",
             "bucket-label-barron’s",   // Note: typographic apostrophe (U+2019)
             "bucket-label-investor’s-business-daily",   // Note: typographic apostrophe (U+2019)
+            "bucket-label-mansion-global",
         ]);
 
         const otherBuckets = document.getElementById("other-buckets");

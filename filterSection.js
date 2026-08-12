@@ -13,7 +13,6 @@
         '[aria-label="Recommended Videos"]',
         '[data-layout-type="buyside-main"]',
         '[data-layout-type="realtor"]',
-        '[title="‘Michael’ Fans Absolutely Don’t Care About the Film’s Bad Reviews"]',
     ];
 
     function replaceWithPlaceholder(container, matchedWords) {
