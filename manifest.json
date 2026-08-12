@@ -25,6 +25,7 @@
       "js": [
         "util.js",
         "filterAdBlockerDetector.js",
+        "filterAdWrapper.js",
         "filterGrid.js",
         "filterHeadlines.js",
         "filterSection.js",
