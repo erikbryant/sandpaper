@@ -21,6 +21,8 @@
         "Sex Abuse",
         "Teen Marriage",
         "Shadow of My Own Thinness",
+        "Murder Trial",
+        "Luigi Mangione",
     ];
 
 // Match full words only using regex word boundaries
