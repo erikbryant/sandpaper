@@ -23,6 +23,9 @@
         "Shadow of My Own Thinness",
         "Murder Trial",
         "Luigi Mangione",
+        "Hayden Panettiere",
+        "L3Harris Ousts CEO",
+        "Misbehaving CEOs",
     ];
 
 // Match full words only using regex word boundaries
@@ -76,6 +79,11 @@
         });
     }
 
+    function removeHeadline(container) {
+        if (!container) return;
+        container.remove()
+    }
+
     function filterArticles() {
         const candidates = document.querySelectorAll("h1, h2, h3, p");
 
@@ -87,7 +95,8 @@
 
             if (matches.length > 0) {
                 const container = findContainer(el);
-                replaceWithPlaceholder(container, matches);
+                // replaceWithPlaceholder(container, matches);
+                removeHeadline(container);
             }
         });
     }
