@@ -71,10 +71,10 @@
         });
     }
 
-// Initial run
+    // Initial run
     filterArticles();
 
-// Observe dynamic content changes (WSJ loads content lazily)
+    // Observe dynamic content changes (WSJ loads content lazily)
     const observer = new MutationObserver(filterArticles);
 
     observer.observe(document.body, {

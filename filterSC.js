@@ -5,11 +5,15 @@
         '[class="stripchat-light-theme"]',
     ];
 
-    // Initial run
-    filterSections(FILTER_KEYWORDS);
+    function filter() {
+        filterSections(FILTER_KEYWORDS);
+    }
 
-    // Observe dynamic content changes (WSJ loads content lazily)
-    const observer = new MutationObserver(filterSections);
+    // Initial run
+    filter();
+
+    // Observe dynamic content changes in case the site loads content lazily
+    const observer = new MutationObserver(filter);
 
     observer.observe(document.body, {
         childList: true,

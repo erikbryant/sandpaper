@@ -7,11 +7,15 @@
         '[class="adWrapper "]',
     ];
 
+    function filter() {
+        filterSections(FILTER_KEYWORDS);
+    }
+
     // Initial run
-    filterSections(FILTER_KEYWORDS);
+    filter();
 
     // Observe dynamic content changes (WSJ loads content lazily)
-    const observer = new MutationObserver(filterSections);
+    const observer = new MutationObserver(filter);
 
     observer.observe(document.body, {
         childList: true,

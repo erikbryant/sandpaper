@@ -15,8 +15,8 @@ function removeSection(container) {
 
 function filterSections(keywords) {
     keywords.forEach(sel => {
+        console.log(sel);
         document.querySelectorAll(sel).forEach(el => {
-            // replaceWithPlaceholder(el, sel);
             removeSection(el);
         });
     });
