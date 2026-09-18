@@ -26,6 +26,7 @@
         "Hayden Panettiere",
         "L3Harris Ousts CEO",
         "Misbehaving CEOs",
+        "Epstein",
     ];
 
 // Match full words only using regex word boundaries
@@ -46,37 +47,6 @@
             element.closest("li") ||
             element.parentElement
         );
-    }
-
-    function replaceWithPlaceholder(container, matchedWords) {
-        if (!container || container.dataset.filtered) return;
-
-        const originalHTML = container.innerHTML;
-
-        const headlineEl = container.querySelector("h1, h2, h3");
-        const originalText = headlineEl
-            ? headlineEl.innerText
-            : container.innerText.slice(0, 200);
-
-        container.dataset.filtered = "true";
-
-        // Pick the first matched keyword (simple + deterministic)
-        const matchedKeyword = matchedWords[0] || "keyword";
-
-        container.innerHTML = `
-    <div class="wsj-filter-card" title="${escapeHtml(matchedKeyword + ": " + originalText)}">
-        <div class="wsj-filter-header">
-            <button class="wsj-filter-button">🙂 Show Article</button>
-        </div>
-    </div>
-  `;
-
-        const button = container.querySelector(".wsj-filter-button");
-
-        button.addEventListener("click", () => {
-            container.innerHTML = originalHTML;
-            container.dataset.filtered = "revealed";
-        });
     }
 
     function removeHeadline(container) {

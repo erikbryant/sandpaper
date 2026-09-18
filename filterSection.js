@@ -15,42 +15,8 @@
         '[data-layout-type="realtor"]',
     ];
 
-    // function replaceWithPlaceholder(container, matchedWords) {
-    //     if (!container || container.dataset.filtered) return;
-    //
-    //     const original = container.innerHTML;
-    //
-    //     container.dataset.filtered = "true";
-    //
-    //     container.innerHTML = `
-    //         <div class="wsj-filter-card" title="${escapeHtml(matchedWords)}">
-    //             <button class="wsj-section-restore">🙂 Show Section</button>
-    //         </div>
-    //     `;
-    //
-    //     container.querySelector(".wsj-section-restore")
-    //         .addEventListener("click", () => {
-    //             container.innerHTML = original;
-    //             container.dataset.filtered = "revealed";
-    //         });
-    // }
-
-    function removeSection(container) {
-        if (!container) return;
-        container.remove()
-    }
-
-    function filterSections() {
-        FILTER_KEYWORDS.forEach(sel => {
-            document.querySelectorAll(sel).forEach(el => {
-                // replaceWithPlaceholder(el, sel);
-                removeSection(el);
-            });
-        });
-    }
-
     // Initial run
-    filterSections();
+    filterSections(FILTER_KEYWORDS);
 
     // Observe dynamic content changes (WSJ loads content lazily)
     const observer = new MutationObserver(filterSections);

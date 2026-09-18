@@ -1,10 +1,8 @@
 (() => {
-    if (!location.hostname.includes("wsj.com")) return;
+    if (!location.hostname.includes("xhamsterlive.com")) return;
 
     const FILTER_KEYWORDS = [
-        'prediction-market',
-        '[id="cx-membership-tile"]',
-        '[class="adWrapper "]',
+        '[class="stripchat-light-theme"]',
     ];
 
     // Initial run
