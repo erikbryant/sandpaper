@@ -1,3 +1,5 @@
+// Filter individual words within an article.
+
 (() => {
     if (!location.hostname.includes("wsj.com")) return;
 

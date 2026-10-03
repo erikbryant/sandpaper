@@ -1,3 +1,5 @@
+// Filter offensive headlines. Mostly applies to the home page.
+
 (() => {
     if (!location.hostname.includes("wsj.com")) return;
 
@@ -27,6 +29,7 @@
         "L3Harris Ousts CEO",
         "Misbehaving CEOs",
         "Epstein",
+        "Rape Allegations",
     ];
 
 // Match full words only using regex word boundaries
