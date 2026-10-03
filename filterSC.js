@@ -1,12 +1,13 @@
+// Remove all iFrames with title="Plugin panel.*"
+
 (() => {
-    if (!location.hostname.includes("xhamsterlive.com")) return;
-
-    const FILTER_KEYWORDS = [
-        '[class="stripchat-light-theme"]',
-    ];
-
     function filter() {
-        filterSections(FILTER_KEYWORDS);
+        const allIframes = document.getElementsByTagName('IFRAME');
+        const matchedIframes = Array.from(allIframes).filter(iframe => iframe.title.startsWith('Plugin panel'));
+        matchedIframes.forEach(iframe => {
+            console.log(iframe);
+            removeSection(iframe);
+        });
     }
 
     // Initial run
