@@ -5,7 +5,7 @@
         const allIframes = document.getElementsByTagName('IFRAME');
         const matchedIframes = Array.from(allIframes).filter(iframe => iframe.title.startsWith('Plugin panel'));
         matchedIframes.forEach(iframe => {
-            console.log(iframe);
+            console.log("filter: ", iframe);
             removeSection(iframe);
         });
     }

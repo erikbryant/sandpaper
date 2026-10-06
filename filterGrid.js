@@ -32,6 +32,7 @@
             }
 
             if (hiddenBuckets.has(label.dataset.testid)) {
+                console.log("filterGrid: ", bucket);
                 bucket.remove();
             }
         }

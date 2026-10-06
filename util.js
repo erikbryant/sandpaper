@@ -10,13 +10,14 @@ function escapeHtml(text) {
 
 function removeSection(container) {
     if (!container) return;
+    console.log("removeSection: ", container);
     container.remove()
 }
 
 function filterSections(keywords) {
     keywords.forEach(sel => {
-        console.log(sel);
         document.querySelectorAll(sel).forEach(el => {
+            console.log("filterSections: ", sel);
             removeSection(el);
         });
     });

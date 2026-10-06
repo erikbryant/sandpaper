@@ -30,6 +30,8 @@
         "Misbehaving CEOs",
         "Epstein",
         "Rape Allegations",
+        "Fort Hood Shooter",
+        "Firing Squad",
     ];
 
 // Match full words only using regex word boundaries
@@ -54,6 +56,7 @@
 
     function removeHeadline(container) {
         if (!container) return;
+        console.log("removeHeadline: ", container);
         container.remove()
     }
 
@@ -67,8 +70,8 @@
             const matches = getMatchedKeywords(text);
 
             if (matches.length > 0) {
-                const container = findContainer(el);
-                // replaceWithPlaceholder(container, matches);
+                const container = el.parentElement;
+                console.log("filterArticles: ", matches)
                 removeHeadline(container);
             }
         });

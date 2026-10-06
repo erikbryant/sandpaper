@@ -9,6 +9,7 @@
         const detector = document.getElementById("comtech-notification");
         if (!detector) return;
 
+        console.log("filterAdBlockerDetector: ", detector);
         detector.remove();
     }
 

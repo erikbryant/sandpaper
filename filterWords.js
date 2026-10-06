@@ -13,6 +13,7 @@
             const anchors = container.querySelectorAll('a');
 
             if (anchors.length >= 2) {
+                console.log("filterSections: ", anchors[1]);
                 anchors[1].remove();
             }
         });
