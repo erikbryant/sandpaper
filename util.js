@@ -8,9 +8,9 @@ function escapeHtml(text) {
         .replace(/>/g, "&gt;");
 }
 
-function removeSection(container) {
+function removeContainer(container) {
     if (!container) return;
-    console.log("removeSection: ", container);
+    console.log("removeContainer: ", container);
     container.remove()
 }
 
@@ -18,7 +18,7 @@ function filterSections(keywords) {
     keywords.forEach(sel => {
         document.querySelectorAll(sel).forEach(el => {
             console.log("filterSections: ", sel);
-            removeSection(el);
+            removeContainer(el);
         });
     });
 }

@@ -54,12 +54,6 @@
         );
     }
 
-    function removeHeadline(container) {
-        if (!container) return;
-        console.log("removeHeadline: ", container);
-        container.remove()
-    }
-
     function filterArticles() {
         const candidates = document.querySelectorAll("h1, h2, h3, p");
 
@@ -72,7 +66,7 @@
             if (matches.length > 0) {
                 const container = el.parentElement;
                 console.log("filterArticles: ", matches)
-                removeHeadline(container);
+                removeContainer(container);
             }
         });
     }
