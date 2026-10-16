@@ -34,6 +34,7 @@
         "Fort Hood Shooter",
         "Firing Squad",
         "Fraternities at Cornell",
+        "Shot and Killed",
     ];
 
 // Match full words only using regex word boundaries
