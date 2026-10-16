@@ -4,9 +4,6 @@
   "version": "1.2.6",
   "description": "Make the news a safer place 🙂",
   "permissions": [],
-  "host_permissions": [
-    "https://www.wsj.com/*"
-  ],
   "action": {
     "default_icon": {
       "16": "images/icon16.png",
@@ -21,21 +18,41 @@
   },
   "content_scripts": [
     {
+      "matches": ["https://phys.org/*"],
+      "js": [
+        "util.js",
+        "phys.org/filterPaywall.js"
+      ],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
       "matches": ["https://www.wsj.com/*"],
       "js": [
         "util.js",
-        "filterAdBlockerDetector.js",
-        "filterAdWrapper.js",
-        "filterGrid.js",
-        "filterHeadlines.js",
-        "filterSection.js",
-        "filterWords.js",
-        "filterVideo.js",
-        "filterSC.js",
-        "documentBg.js"
+        "wsj.com/filterAdBlockerDetector.js",
+        "wsj.com/filterAdWrapper.js",
+        "wsj.com/filterGrid.js",
+        "wsj.com/filterHeadlines.js",
+        "wsj.com/filterSection.js",
+        "wsj.com/filterWords.js",
+        "wsj.com/filterVideo.js",
+        "wsj.com/documentBg.js"
       ],
       "css": ["styles.css"],
-      "run_at": "document_idle"
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://xhamsterlive.com/*"],
+      "js": [
+        "util.js",
+        "xhl.com/filterPlugins.js"
+      ],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "world": "MAIN"
     }
   ]
 }

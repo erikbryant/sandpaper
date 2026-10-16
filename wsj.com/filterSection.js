@@ -1,6 +1,4 @@
 (() => {
-    if (!location.hostname.includes("wsj.com")) return;
-
     const FILTER_KEYWORDS = [
         "#opinion-module",
         '[class="fader"]',

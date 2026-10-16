@@ -1,13 +1,15 @@
-(() => {
-    if (!location.hostname.includes("wsj.com")) return;
+// Remove the paywall
 
+(() => {
     const FILTER_KEYWORDS = [
-        'prediction-market',
-        '[id="cx-membership-tile"]',
-        '[class="adWrapper "]',
+        '[class="fc-ab-root"]',
     ];
 
     function filter() {
+        if (window.paywall &&
+            typeof window.paywall.hide === "function") {
+            window.paywall.hide();
+        }
         filterSections(FILTER_KEYWORDS);
     }
 

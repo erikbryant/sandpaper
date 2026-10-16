@@ -1,6 +1,4 @@
 (() => {
-    if (!location.hostname.includes("wsj.com")) return;
-
     // ================================
     // 1. BLOCK AUTOPLAY AT THE SOURCE
     // ================================

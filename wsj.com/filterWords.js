@@ -1,8 +1,6 @@
 // Filter individual words within an article.
 
 (() => {
-    if (!location.hostname.includes("wsj.com")) return;
-
     function filterSections() {
         // Remove dynamic stock tickers
         document.querySelectorAll('a[data-type="company"]').forEach(firstAnchor => {

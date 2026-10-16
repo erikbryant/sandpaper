@@ -1,8 +1,6 @@
 // Filter offensive headlines. Mostly applies to the home page.
 
 (() => {
-    if (!location.hostname.includes("wsj.com")) return;
-
     const FILTER_KEYWORDS = [
         "after an ice raid",
         "sexual-assault",

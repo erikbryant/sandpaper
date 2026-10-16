@@ -3,8 +3,6 @@
 // attributes rather than by generated CSS class names.
 
 (() => {
-    if (!location.hostname.includes("wsj.com")) return;
-
     function filterGrid() {
         "use strict";
 

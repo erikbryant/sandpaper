@@ -1,8 +1,6 @@
 // Removes the ad blocker detector warning.
 
 (() => {
-    if (!location.hostname.includes("wsj.com")) return;
-
     function filterAdBlockerDetector() {
         "use strict";
 
