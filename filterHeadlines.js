@@ -14,6 +14,7 @@
         "Therapists to Blame",
         "Hate Crime",
         "School Shoot",
+        "School Shooting",
         "Sexual Assault",
         "Sexual Violence",
         "The Idaho Murders",
@@ -32,6 +33,7 @@
         "Rape Allegations",
         "Fort Hood Shooter",
         "Firing Squad",
+        "Fraternities at Cornell",
     ];
 
 // Match full words only using regex word boundaries
