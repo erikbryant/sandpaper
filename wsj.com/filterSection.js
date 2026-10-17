@@ -11,6 +11,7 @@
         '[aria-label="Recommended Videos"]',
         '[data-layout-type="buyside-main"]',
         '[data-layout-type="realtor"]',
+        '[data-testid="video-player-docked"]',  // The floating video player
     ];
 
     function filter() {
