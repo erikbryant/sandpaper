@@ -28,6 +28,18 @@
       "world": "MAIN"
     },
     {
+      "matches": ["https://www.reuters.com/*",
+        "https://reuters.com/*"
+      ],
+      "js": [
+        "util.js",
+        "reuters.com/stopAutoplay.js"
+      ],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
       "matches": ["https://www.wsj.com/*"],
       "js": [
         "util.js",
@@ -37,7 +49,7 @@
         "wsj.com/filterHeadlines.js",
         "wsj.com/filterSection.js",
         "wsj.com/filterWords.js",
-        "wsj.com/filterVideo.js",
+        "wsj.com/stopAutoplay.js",
         "wsj.com/documentBg.js"
       ],
       "css": ["styles.css"],
