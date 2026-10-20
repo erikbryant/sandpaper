@@ -20,8 +20,8 @@
     {
       "matches": ["https://phys.org/*"],
       "js": [
-        "util.js",
-        "phys.org/filterPaywall.js"
+        "phys.org/filterPaywall.js",
+        "util/util.js"
       ],
       "css": ["styles.css"],
       "run_at": "document_idle",
@@ -32,7 +32,6 @@
         "https://reuters.com/*"
       ],
       "js": [
-        "util.js",
         "reuters.com/stopAutoplay.js"
       ],
       "css": ["styles.css"],
@@ -42,7 +41,7 @@
     {
       "matches": ["https://www.wsj.com/*"],
       "js": [
-        "util.js",
+        "util/util.js",
         "wsj.com/filterAdBlockerDetector.js",
         "wsj.com/filterAdWrapper.js",
         "wsj.com/filterGrid.js",
@@ -59,7 +58,7 @@
     {
       "matches": ["https://xhamsterlive.com/*"],
       "js": [
-        "util.js",
+        "util/util.js",
         "xhl.com/filterPlugins.js"
       ],
       "css": ["styles.css"],
