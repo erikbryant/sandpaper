@@ -33,6 +33,7 @@
         "Firing Squad",
         "Fraternities at Cornell",
         "Shot and Killed",
+        "sexually abused",
     ];
 
 // Match full words only using regex word boundaries
