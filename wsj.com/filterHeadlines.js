@@ -34,6 +34,11 @@
         "Fraternities at Cornell",
         "Shot and Killed",
         "sexually abused",
+        "Cornell 7",
+        "sex trafficking",
+        "autism",
+        "transgender",
+        "sexual abuse",
     ];
 
 // Match full words only using regex word boundaries
