@@ -39,6 +39,10 @@
         "autism",
         "transgender",
         "sexual abuse",
+        "sex-assault",
+        "dead in shooting",
+        "cut off his own foot",
+        "sexual misconduct",
     ];
 
 // Match full words only using regex word boundaries
